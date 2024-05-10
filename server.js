@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 // Schedule a job to run on the 1st of every month at 00:00 (midnight)
-cron.schedule('* * * * *', async () => {
+cron.schedule('0 0 1 * *', async () => {
 
   console.log('Running scheduled task: calling external API on the 1st of the month.');
 
