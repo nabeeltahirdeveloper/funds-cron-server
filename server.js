@@ -26,5 +26,5 @@ cron.schedule('* * * * *', async () => {
 
 // Start the Express server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:3000`);
 });
