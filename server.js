@@ -16,7 +16,7 @@ cron.schedule('* * * * *', async () => {
   console.log('Running scheduled task: calling external API on the 1st of the month.');
 
   try {
-    const response = await fetch('http://localhost:3000/api/leaves/leavesUpdate', { method: 'POST' });
+    const response = await fetch('https://funds-reimbursement.vercel.app/api/leaves/leavesUpdate', { method: 'POST' });
     const data = await response.json();
     console.log('API Response:', data.message);
   } catch (error) {
