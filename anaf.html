@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anaf Company Invoice - <span id="invoiceNo"></span></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      p {
+        margin: 0;
+      }
+      .header {
+        background-color: black;
+        color: #c7a872;
+        padding: 20px 0;
+        position: relative;
+        overflow: hidden;
+        height: 40px;
+      }
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 82.5%;
+        height: 5px;
+        background-color: #c7a872;
+        z-index: -20;
+      }
+      .header img {
+        position: absolute;
+        top: 55%;
+        left: 0px;
+        transform: translateY(-50%);
+        height: 100px;
+        width: 300px;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 20px;
+        color: white;
+        height: 90px;
+        background-color: black;
+      }
+      .footer .column1 {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        max-width: 400px;
+        margin: 0 auto;
+        align-items: flex-start;
+        row-gap: 10px;
+        padding-top: 14px;
+      }
+      .footer .column2 {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        max-width: 400px;
+        margin: 0 auto;
+        align-items: flex-start;
+        padding-top: 10px;
+      }
+      .hero-image {
+        background-image: url("https://i.ibb.co/jHrPstT/3.png");
+        background-color: white;
+        height: 80vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      .borderBottom {
+        border-bottom: 13px solid #c7a872;
+        width: 100%;
+      }
+      .footer .column1 i {
+        color: #c7a872;
+        margin-right: 10px;
+      }
+      .footer .column2 i {
+        color: #c7a872;
+        margin-right: 10px;
+      }
+      .worldmap {
+        display: flex;
+        padding-top: 12px;
+        padding-left: 2px;
+        gap: 6px;
+      }
+      main {
+        padding-top: 127px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      h1,
+      h2 {
+        font-weight: bold;
+        color: black;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <img src="https://i.ibb.co/Gn9nhMk/5.png" alt="Logo" />
+      </div>
+    </header>
+
+    <div class="hero-image">
+      <main>
+        <h1 style="border-bottom: 2px solid c7a872;">Invoice</h1>
+        <p>Title: <span id="title"></span></p>
+        <p>Date Created At: <span id="createdAt"></span></p>
+        <p>Invoice Number: <span id="invoiceNo"></span></p>
+        <p>From Company: <span id="fromCompany"></span></p>
+        <p>To Company: <span id="toCompany"></span></p>
+
+        <h2>Invoice Description</h2>
+        <p><span id="invoiceDescription"></span></p>
+
+        <h2>Details</h2>
+        <table>
+          <tr>
+            <th>Total Amount</th>
+            <th>Total Amount Excluding VAT</th>
+            <th>Expense</th>
+            <th>Net Earning</th>
+            <th>Percentage</th>
+          </tr>
+          <tr>
+            <td><span id="totalAmount"></span></td>
+            <td><span id="totalAmountExclVAT"></span></td>
+            <td><span id="expense"></span></td>
+            <td><span id="netEarning"></span></td>
+            <td><span id="percentage"></span></td>
+          </tr>
+        </table>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="column1">
+        <p>
+          <i class="fa fa-phone-alt" aria-hidden="true"></i> +966 13 361 5559
+        </p>
+        <p><i class="fa fa-envelope" aria-hidden="true"></i> info@anafco.com</p>
+      </div>
+      <div class="column2">
+        <p><i class="fa fa-globe" aria-hidden="true"></i> www.anafco.com</p>
+        <span class="worldmap"
+          ><i class="fa fa-building" aria-hidden="true"></i>
+          <p>
+            Office # 405, 4th Floor, Dana Building King Faisal Street, Jubail,
+            Saudi Arabia 35514
+          </p>
+        </span>
+      </div>
+    </footer>
+
+    <div class="borderBottom"></div>
+  </body>
+</html>
