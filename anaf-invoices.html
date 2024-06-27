@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background: url("https://i.ibb.co/Wzv9Htj/Screenshot-2024-05-16-at-7-11-14-PM.png")
+          no-repeat center center;
+        background-size: contain;
+      }
+
+      .invoice-container {
+        border-radius: 10px;
+        padding-top: 150px;
+      }
+
+      main {
+        padding-top: 127px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      h1,
+      h2 {
+        font-weight: bold;
+        color: black;
+      }
+
+      h1 {
+        font-size: 24px;
+        border-bottom: 2px solid #A6A6A6;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-container">
+      <main>
+        <h1>Invoice</h1>
+        <p>Title: <span id="title"></span></p>
+        <p>Date Created At: <span id="createdAt"></span></p>
+        <p>Invoice Number: <span id="invoiceNo"></span></p>
+        <p>From Company: <span id="fromCompany"></span></p>
+        <p>To Company: <span id="toCompany"></span></p>
+
+        <h2>Invoice Description</h2>
+        <p><span id="invoiceDescription"></span></p>
+
+        <h2>Details</h2>
+        <table>
+          <tr>
+            <th>Total Amount</th>
+            <th>Total Amount Excluding VAT</th>
+            <th>Expense</th>
+            <th>Net Earning</th>
+            <th>Percentage</th>
+          </tr>
+          <tr>
+            <td><span id="totalAmount"></span></td>
+            <td><span id="totalAmountExclVAT"></span></td>
+            <td><span id="expense"></span></td>
+            <td><span id="netEarning"></span></td>
+            <td><span id="percentage"></span></td>
+          </tr>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
