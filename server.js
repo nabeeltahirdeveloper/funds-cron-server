@@ -57,7 +57,9 @@ app.post("/generate-pdf", async (req, res) => {
 
   try {
     console.log("Generating PDF with data:", data);
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const page = await browser.newPage();
 
     let html = "anaf.html"
@@ -114,7 +116,9 @@ app.post('/generate-invoice-pdf', async (req, res) => {
   try {
     console.log("Generating PDF with data:", data);
     const invoiceData = data.invoiceData;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const page = await browser.newPage();
     const requestType = data.invoiceType;
 
