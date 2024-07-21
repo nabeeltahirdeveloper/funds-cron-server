@@ -72,7 +72,6 @@ app.post("/generate-pdf", async (req, res) => {
     });
 
     await page.evaluate((data) => {
-      document.getElementById('title').innerText = data.title;
       document.getElementById('invoiceNo').innerText = data.invoiceNo;
       document.getElementById('invoiceDescription').innerText = data.invoiceDescription;
       document.getElementById('totalAmount').innerText = data.totalAmount;
@@ -81,8 +80,8 @@ app.post("/generate-pdf", async (req, res) => {
       document.getElementById('netEarning').innerText = data.netEarning;
       document.getElementById('percentage').innerText = data.percentage;
       document.getElementById('createdAt').innerText = data.createdAt;
-      document.getElementById('fromCompany').innerText = data.invoiceForCompany;
       document.getElementById('toCompany').innerText = data.invoiceToCompany;
+      document.getElementById('vat').innerText = 15/100 * data.totalAmount;
     }, data);
 
     // Custom delay function
@@ -109,6 +108,9 @@ app.post("/generate-pdf", async (req, res) => {
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+
+
 
 app.post('/generate-invoice-pdf', async (req, res) => {
   const data = req.body; // Assuming data is an array of invoice objects
@@ -230,13 +232,39 @@ app.post('/generate-invoice-pdf', async (req, res) => {
             console.log(`Element with ID ${id} not found`);
           }
         };
-
+        const numberToWords =(num)=> {
+          if (num === 0) return 'Zero';
+        
+          const belowTwenty = [
+              'Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 
+              'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
+          ];
+          const tens = [
+              '', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
+          ];
+          const thousands = [
+              '', 'Thousand', 'Million', 'Billion'
+          ];
+        
+          function helper(n) {
+              if (n < 20) return belowTwenty[n];
+              if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 !== 0 ? ' ' + belowTwenty[n % 10] : '');
+              if (n < 1000) return belowTwenty[Math.floor(n / 100)] + ' Hundred' + (n % 100 !== 0 ? ' ' + helper(n % 100) : '');
+              for (let i = 0; i < thousands.length; i++) {
+                  const unit = 1000 ** (i + 1);
+                  if (n < unit) {
+                      return helper(Math.floor(n / (unit / 1000))) + ' ' + thousands[i] + (n % (unit / 1000) !== 0 ? ' ' + helper(n % (unit / 1000)) : '');
+                  }
+              }
+          }
+        
+          return helper(num);
+        }
+        
+          const amountInWords = numberToWords(invoice.Amount)
           setText("Amount", invoice.Amount)
+          setText("AmountInWords", amountInWords)
           setText("CreatedAt",invoice.CreatedAt)
-          setText("ManagerApprove",invoice.ManagerApprove)
-          setText("Status",invoice.Status)
-          setText("Title",invoice.Title)
-          setText("Type",invoice.Type)
           setText("Username",invoice.Username)
         
 

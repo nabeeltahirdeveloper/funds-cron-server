@@ -72,13 +72,30 @@
     <div class="invoice-container">
       <main>
         <h1 style="border-bottom: 2px solid c7a872;">Cash</h1>
-        <p>Title: <span id="Title"></span></p>
-        <p>Amount: <span id="Amount"></span></p>
-        <p>ManagerApprove: <span id="ManagerApprove"></span></p>
-        <p>Status: <span id="Status"></span></p>
-        <p>Type: <span id="Type"></span></p>
-        <p>Username: <span id="Username"></span></p>
-        <p>Date Created At: <span id="CreatedAt"></span></p>
+
+
+        <div style="display: flex; gap:10px;">
+          <p>Claimed By: <span id="Username" style="text-decoration: underline;"></span></p>
+          <p>Date: <span id="CreatedAt" style="text-decoration: underline;"></span></p>
+        </div>
+        <div style="display: flex; gap:10px;">
+          <p>Amount in Figures: <span style="text-decoration: underline;" id="Amount"></p>
+          <p>Amount in Words: <span style="text-decoration: underline;" id="AmountInWords"></span></p>
+        </div>
+        <div>
+          <p>For (Description): <span style="text-decoration: underline;" id="description"></p>
+          
+        </div>
+
+
+        <div style="display: flex; ">
+          <p style="border-top: 1px solid black; flex:1">Prepared By: </p>
+          <p style="flex:1"></p>
+          <p style="border-top: 1px solid black; flex:1">Checked By </p>
+          <p style="flex:1"></p>
+          <p style="border-top: 1px solid black; flex:1">Approved By </p>
+        </div>
+        
 
 
 

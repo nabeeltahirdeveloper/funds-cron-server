@@ -72,26 +72,26 @@
     <div class="invoice-container">
       <main>
         <h1>Invoice</h1>
-        <p>Title: <span id="title"></span></p>
-        <p>Date Created At: <span id="createdAt"></span></p>
-        <p>Invoice Number: <span id="invoiceNo"></span></p>
-        <p>From Company: <span id="fromCompany"></span></p>
+        <p>Date: <span id="createdAt"></span></p>
+        <p>Invoice #: <span id="invoiceNo"></span></p>
         <p>To Company: <span id="toCompany"></span></p>
 
-        <h2>Invoice Description</h2>
+        <h2>Description</h2>
         <p><span id="invoiceDescription"></span></p>
 
         <h2>Details</h2>
         <table>
           <tr>
-            <th>Total Amount</th>
-            <th>Total Amount Excluding VAT</th>
-            <th>Expense</th>
-            <th>Net Earning</th>
-            <th>Percentage</th>
+            <th>Total Amount incl.VAT (SAR)</th>
+            <th>VAT (15%) (SAR)</th>
+            <th>Total Amount excl. VAT (SAR)</th>
+            <th>Expense (SAR)</th>
+            <th>Net Profit (SAR)</th>
+            <th>% Net Profit</th>
           </tr>
           <tr>
             <td><span id="totalAmount"></span></td>
+            <td><span id="vat"></span></td>
             <td><span id="totalAmountExclVAT"></span></td>
             <td><span id="expense"></span></td>
             <td><span id="netEarning"></span></td>
