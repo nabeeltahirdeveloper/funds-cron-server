@@ -66,38 +66,41 @@
       h2 {
         font-size: 18px;
       }
+      footer {
+        position: absolute;
+        bottom: 60px;
+        width: 100%;
+        height: 60px; /* Height of the footer */
+      }
     </style>
   </head>
   <body>
     <div class="invoice-container">
       <main>
-        <h1 style="border-bottom: 2px solid c7a872;">Cash</h1>
+        <h1 style="border-bottom: 2px solid c7a872; display:inline;">PETTY CASH</h1>
 
 
-        <div style="display: flex; gap:10px;">
-          <p>Claimed By: <span id="Username" style="text-decoration: underline;"></span></p>
+        <div style="">
           <p>Date: <span id="CreatedAt" style="text-decoration: underline;"></span></p>
+          <p>Claimed By: <span id="Username" style="text-decoration: underline;"></span></p>
         </div>
-        <div style="display: flex; gap:10px;">
-          <p>Amount in Figures: <span style="text-decoration: underline;" id="Amount"></p>
-          <p>Amount in Words: <span style="text-decoration: underline;" id="AmountInWords"></span></p>
+        <div style="">
+          <p>Amount in Figures (SAR): <span style="text-decoration: underline;" id="Amount"></p>
+          <p>Amount in Words (SAR): <span style="text-decoration: underline;" id="AmountInWords"></span></p>
         </div>
-        <div>
-          <p>For (Description): <span style="text-decoration: underline;" id="description"></p>
+        <div style="margin-top:50px;">
+          <p>Description: <span style="text-decoration: underline; margin-top:20px;" id="description"></p>
           
         </div>
 
 
-        <div style="display: flex; ">
-          <p style="border-top: 1px solid black; flex:1">Prepared By: </p>
-          <p style="flex:1"></p>
-          <p style="border-top: 1px solid black; flex:1">Checked By </p>
-          <p style="flex:1"></p>
-          <p style="border-top: 1px solid black; flex:1">Approved By </p>
-        </div>
         
+        <Footer>
 
-
+          <p style="font-size: small; font-style:italic;">
+            Note: This is a system generated invoice and does not need any signature.
+          </p>
+        </Footer>
 
         
       </main>
